@@ -73,7 +73,6 @@ class HomePageController extends ChangeNotifier {
     selectedPhotos.sort(PhotoModel.compareByDateAsc);
     if (selectedPhotos.isEmpty) return;
 
-    //TODO: Implementar nombre de carpeta personalizado
     await UploadService.uploadPhotosInOrder(
       selectedPhotos,
       folderName: 'nombre_carpeta_personalizado',
