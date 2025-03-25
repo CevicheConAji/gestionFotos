@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                               Image.file(photo.file, fit: BoxFit.cover),
                               if (photo.isSelected)
                                 Container(
-                                  color: Colors.black.withOpacity(0.5),
+                                  color: Colors.black.withAlpha(128),
                                   child: const Center(
                                     child: Icon(
                                       Icons.check_circle,
@@ -100,9 +100,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add_photo_alternate),
         tooltip: 'Agregar desde galería',
         onPressed: () => controller.pickImages(),
+        child: const Icon(Icons.add_photo_alternate),
       ),
     );
   }
