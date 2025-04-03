@@ -3,10 +3,14 @@ import 'package:http/http.dart' as http;
 import '../models/photo_model.dart';
 
 class UploadService {
-  static const String _apiUrl =
+  /*static const String _apiUrl =
       'https://eanfotosapi.electricautomationnetwork.com/upload2/';
   static const String _user = 'fotospedido';
-  static const String _password = 'pegxup-7wussi-pekdUx';
+  static const String _password = 'pegxup-7wussi-pekdUx';*/
+
+  static const String _apiUrl = 'http://192.168.0.14:5000/upload2/';
+  static const String _user = 'test_user';
+  static const String _password = 'test_pass';
 
   static Future<bool> uploadPhotosInOrder(
     List<PhotoModel> photos, {

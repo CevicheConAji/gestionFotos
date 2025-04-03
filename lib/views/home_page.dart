@@ -131,8 +131,7 @@ class _HomePageState extends State<HomePage> {
                 if (folderName.isEmpty) return;
 
                 final controller = context.read<HomePageController>();
-                final selected =
-                    controller.photos.where((p) => p.isSelected).toList();
+                final selected = controller.photos;
 
                 if (selected.isEmpty) {
                   Navigator.pop(context);
