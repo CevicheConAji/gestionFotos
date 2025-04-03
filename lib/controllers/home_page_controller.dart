@@ -80,11 +80,10 @@ class HomePageController extends ChangeNotifier {
     clearSelection();
   }
 
-  /// Utilidad para generar nombre único basado en fecha/hora
-  String _generateTimestampName() {
-    final now = DateTime.now();
-    return '${now.year}${_twoDigits(now.month)}${_twoDigits(now.day)}_${_twoDigits(now.hour)}${_twoDigits(now.minute)}${_twoDigits(now.second)}';
-  }
-
   String _twoDigits(int n) => n.toString().padLeft(2, '0');
+
+  void clearPhotos() {
+    _photos.clear();
+    notifyListeners();
+  }
 }

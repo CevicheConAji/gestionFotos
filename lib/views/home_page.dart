@@ -152,6 +152,7 @@ class _HomePageState extends State<HomePage> {
                 );
 
                 controller.clearSelection();
+                controller.clearPhotos();
 
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
