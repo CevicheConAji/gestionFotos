@@ -8,7 +8,7 @@ class UploadService {
   static const String _user = 'fotospedido';
   static const String _password = 'pegxup-7wussi-pekdUx';*/
 
-  static const String _apiUrl = 'http://192.168.0.14:5000/upload2/';
+  static const String _apiUrl = 'http://192.168.0.28:9069/upload2/';
   static const String _user = 'test_user';
   static const String _password = 'test_pass';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../controllers/home_page_controller.dart';
 import '../services/upload_service.dart';
@@ -158,12 +159,22 @@ class _HomePageState extends State<HomePage> {
                   SnackBar(
                     content: Text(
                       success
-                          ? '✅ Carpeta "$folderName" subida con éxito'
-                          : '⚠️ Error al subir una o más imágenes en "$folderName"',
+                          ? '✅ Carpeta "$folderName" subida con éxito. Cerrando aplicación...'
+                          : '❌ Error al subir imágenes en "$folderName". La app se cerrará.',
                     ),
                     backgroundColor: success ? Colors.green : Colors.red,
+                    duration: const Duration(seconds: 2),
                   ),
                 );
+
+                await Future.delayed(const Duration(seconds: 3));
+                Future.microtask(
+                  () =>
+                      Navigator.of(context).popUntil((route) => route.isFirst),
+                );
+                Future.delayed(const Duration(milliseconds: 100), () {
+                  SystemNavigator.pop(); // Esto cierra completamente la app
+                });
               },
             ),
           ],
